@@ -1,0 +1,9 @@
+{
+  "name": "abp-rel-clean-product",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Dummy content for an ABP collaboration demonstration.",
+  "scripts": {
+    "test": "node --test \"packages/product/test/*.test.mjs\""
+  }
+}
