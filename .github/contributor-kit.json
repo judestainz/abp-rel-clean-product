@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "2.0.0",
+  "kind": "abp.contributor-kit",
+  "kitVersion": 1,
+  "productRepositoryId": "github-repository:1400796246",
+  "productRemoteUrl": "https://github.com/judestainz/abp-rel-clean-product.git",
+  "targetBranch": "master",
+  "publicationMode": "automatic",
+  "requirements": [
+    {
+      "name": "node",
+      "command": "node",
+      "versionArgs": [
+        "--version"
+      ],
+      "minimumVersion": "22.0",
+      "install": "Install Node.js 22 or newer from https://nodejs.org"
+    }
+  ],
+  "host": {
+    "platforms": [
+      "linux",
+      "darwin"
+    ],
+    "architectures": [
+      "x64",
+      "arm64"
+    ],
+    "minimumMemoryMiB": 0
+  },
+  "commands": {
+    "setup": [],
+    "localValidation": [
+      "npm test"
+    ],
+    "stationOnly": []
+  },
+  "stationChecks": [
+    {
+      "name": "test",
+      "required": true,
+      "runnableLocally": true
+    }
+  ],
+  "docs": [
+    "README.md"
+  ],
+  "issueForms": [
+    "plan-and-implement",
+    "plan-only",
+    "review-and-integrate"
+  ],
+  "requestFormat": {
+    "fields": [
+      {
+        "id": "requestType",
+        "label": "Request type",
+        "description": "Which request type is this: plan-and-implement, plan-only or review-and-integrate?",
+        "sample": "plan-and-implement"
+      },
+      {
+        "id": "objective",
+        "label": "Objective",
+        "description": "What outcome should this change achieve?",
+        "sample": "Export invoices as CSV."
+      },
+      {
+        "id": "expectedBehavior",
+        "label": "Expected behavior",
+        "description": "How should the product behave once this is done?",
+        "sample": "The invoice list offers a CSV download for the displayed invoices."
+      },
+      {
+        "id": "acceptance",
+        "label": "Acceptance criteria",
+        "description": "Which observable acceptance criteria decide that it is done?",
+        "sample": "1. The download contains one row per displayed invoice.\n2. Each row includes the invoice number and total."
+      },
+      {
+        "id": "exclusions",
+        "label": "Exclusions",
+        "description": "What is explicitly out of scope?",
+        "sample": "Changing invoice totals or adding another export format is out of scope."
+      },
+      {
+        "id": "context",
+        "label": "Relevant context",
+        "description": "Which existing behavior, issue or contract is relevant?",
+        "sample": "The product already displays an invoice list."
+      },
+      {
+        "id": "risk",
+        "label": "Risk",
+        "description": "Is the risk low, medium or high?",
+        "sample": "low"
+      },
+      {
+        "id": "existingTask",
+        "label": "Existing task",
+        "description": "Which approved task does this refer to?",
+        "sample": "INVOICE-001"
+      },
+      {
+        "id": "pullRequest",
+        "label": "Pull request",
+        "description": "Which pull request in this repository should be reviewed? Give its number, for example #12.",
+        "sample": "#12"
+      },
+      {
+        "id": "taskReference",
+        "label": "Task or brief",
+        "description": "Which task or brief, and which version, does the pull request implement?",
+        "sample": "brief-12@v1"
+      }
+    ],
+    "requestTypes": [
+      "plan-and-implement",
+      "plan-only",
+      "review-and-integrate"
+    ],
+    "requiredFields": {
+      "plan-and-implement": [
+        "objective",
+        "expectedBehavior",
+        "acceptance",
+        "risk"
+      ],
+      "plan-only": [
+        "objective",
+        "expectedBehavior",
+        "acceptance",
+        "risk"
+      ],
+      "review-and-integrate": [
+        "pullRequest"
+      ]
+    },
+    "risks": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "reservedSections": [
+      "approval",
+      "approved",
+      "approver",
+      "approvers",
+      "assignee",
+      "assignees",
+      "budget",
+      "budgets",
+      "labels",
+      "label",
+      "permissions",
+      "permission",
+      "policy",
+      "priority",
+      "review",
+      "reviewer",
+      "reviewers",
+      "review policy",
+      "validation",
+      "validators",
+      "allowed paths",
+      "protected paths",
+      "sessions",
+      "spend"
+    ],
+    "proseLabel": "What do you want?",
+    "suggestedType": "Let the station suggest",
+    "sampleType": "plan-and-implement"
+  },
+  "submission": {
+    "trailerFormat": "Implements-Brief: brief-<issue>@v<version> base=<exact base commit>",
+    "titleFormat": "[brief-<issue> v<version>] <summary>"
+  },
+  "policyDigest": "sha256:f41137c32fe0c6fa15d6e317d1e3cc7dfbf6bd3fb5a6e942014534af8473cd28"
+}
