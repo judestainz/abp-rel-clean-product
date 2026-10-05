@@ -1,0 +1,66 @@
+name: "Plan and implement"
+description: "Ask the station to plan, implement, review and integrate a change."
+title: "[plan-and-implement] "
+body:
+  - type: dropdown
+    id: requestType
+    attributes:
+      label: "Request type"
+      description: "Which request type is this: plan-and-implement, plan-only or review-and-integrate?"
+      options:
+        - "plan-and-implement"
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: "Objective"
+      description: "What outcome should this change achieve?"
+    validations:
+      required: true
+  - type: textarea
+    id: expectedBehavior
+    attributes:
+      label: "Expected behavior"
+      description: "How should the product behave once this is done?"
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: "Acceptance criteria"
+      description: "Which observable acceptance criteria decide that it is done?"
+    validations:
+      required: true
+  - type: textarea
+    id: exclusions
+    attributes:
+      label: "Exclusions"
+      description: "What is explicitly out of scope?"
+    validations:
+      required: false
+  - type: textarea
+    id: context
+    attributes:
+      label: "Relevant context"
+      description: "Which existing behavior, issue or contract is relevant?"
+    validations:
+      required: false
+  - type: dropdown
+    id: risk
+    attributes:
+      label: "Risk"
+      description: "Is the risk low, medium or high?"
+      options:
+        - "low"
+        - "medium"
+        - "high"
+    validations:
+      required: true
+  - type: input
+    id: existingTask
+    attributes:
+      label: "Existing task"
+      description: "Which approved task does this refer to?"
+    validations:
+      required: false

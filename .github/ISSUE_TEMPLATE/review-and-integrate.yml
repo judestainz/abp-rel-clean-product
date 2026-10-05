@@ -1,0 +1,34 @@
+name: "Review and integrate"
+description: "Ask the station to review and integrate an existing pull request."
+title: "[review-and-integrate] "
+body:
+  - type: dropdown
+    id: requestType
+    attributes:
+      label: "Request type"
+      description: "Which request type is this: plan-and-implement, plan-only or review-and-integrate?"
+      options:
+        - "review-and-integrate"
+    validations:
+      required: true
+  - type: input
+    id: pullRequest
+    attributes:
+      label: "Pull request"
+      description: "Which pull request in this repository should be reviewed? Give its number, for example #12."
+    validations:
+      required: true
+  - type: input
+    id: taskReference
+    attributes:
+      label: "Task or brief"
+      description: "Which task or brief, and which version, does the pull request implement?"
+    validations:
+      required: false
+  - type: textarea
+    id: objective
+    attributes:
+      label: "Objective"
+      description: "What outcome should this change achieve?"
+    validations:
+      required: false

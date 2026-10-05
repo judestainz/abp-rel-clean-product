@@ -1,0 +1,22 @@
+name: "Request"
+description: "Ask the station for a change in plain words."
+body:
+  - type: textarea
+    id: request
+    attributes:
+      label: "What do you want?"
+      description: "Describe the outcome you want. The station supplies validation; do not specify tests, budgets or reviewers."
+    validations:
+      required: true
+  - type: dropdown
+    id: requestType
+    attributes:
+      label: "Request type"
+      options:
+        - "Let the station suggest"
+        - "plan-and-implement"
+        - "plan-only"
+        - "review-and-integrate"
+      default: 0
+    validations:
+      required: true
