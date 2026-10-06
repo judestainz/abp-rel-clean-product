@@ -1,7 +1,7 @@
 {
   "schemaVersion": "2.0.0",
   "kind": "abp.contributor-kit",
-  "kitVersion": 1,
+  "kitVersion": 2,
   "productRepositoryId": "github-repository:1400796246",
   "productRemoteUrl": "https://github.com/judestainz/abp-rel-clean-product.git",
   "targetBranch": "master",

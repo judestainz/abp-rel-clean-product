@@ -1,8 +1,17 @@
 #!/bin/sh
-# Generated contributor kit v1 (policy sha256:f41137c32fe0c6fa15d6e317d1e3cc7dfbf6bd3fb5a6e942014534af8473cd28). Refreshed only by governed upgrade commits; do not edit by hand.
-# Contributor setup and local validation, derived from this product's approved collaboration policy.
+# Generated contributor kit v2 (policy sha256:f41137c32fe0c6fa15d6e317d1e3cc7dfbf6bd3fb5a6e942014534af8473cd28). Refreshed only by governed upgrade commits; do not edit by hand.
+# Purpose: Contributor setup and local validation, derived from this product's approved collaboration policy, so a teammate and their AI run exactly the checks the station will hold them to.
+# Learning objectives: See why a missing dependency or an unsupported host is reported with its own exit code instead of guessed around, and why a station-only check is printed as not run and never as passed.
+# Responsibilities: Judge the host (doctor), run the declared setup commands once in a clean clone (setup), and run every declared local check while listing the station-only ones (check).
+# Key concepts: Declared commands run through sh -c exactly as the policy spells them; FOUND, MISSING, HOST, UNSUPPORTED, PASS, FAIL and STATION-ONLY lines; one SUMMARY line per mode.
+# Algorithms: version_at_least compares dotted versions field by field with awk; every other step is a sequential pass over the declared requirements, commands and checks.
+# Assumptions: A POSIX sh with awk, grep, uname and command -v on PATH; the script is run from anywhere inside the clone and changes to the repository root itself.
+# Inputs and outputs: Reads the mode argument (doctor, setup or check), the PATH and the host's uname and memory facts; writes one report line per judgement to standard output and runs only the declared commands.
+# Error handling: Every failure is a printed line and a distinct exit code; nothing is retried, assumed or hidden, and a host the script cannot measure is UNSUPPORTED rather than ready.
+# Complexity: Linear in the number of declared requirements, setup commands and local checks; each command runs once.
 # Usage: sh scripts/contributor-check.sh doctor|setup|check
 # Exit codes: 0 ready or passed, 1 a setup step or local check failed, 2 usage, 3 missing dependency, 4 unsupported host.
+# Related files: AGENTS.md and CONTRIBUTING.md (the guides that explain these modes), .github/contributor-kit.json and its .LEARNING.md note (the machine-readable policy this script was derived from).
 set -u
 cd "$(dirname "$0")/.." || exit 2
 mode="${1:-check}"
