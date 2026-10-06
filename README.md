@@ -19,7 +19,8 @@ GitHub issues and pull requests.
 
 ## Public API
 
-`greeting(name)` returns the string `"Hello, <name>!"`.
+`greeting(name)` returns the string `"Hello, <name>!"`. The substitution is unconditional, so every string `name` is a
+valid argument — including `""`, which yields `"Hello, !"`.
 
 ## Data or control flow
 
@@ -31,10 +32,15 @@ A caller passes a name to `greeting`, which returns the formatted string. There 
 import { greeting } from "./packages/product/greeting.mjs";
 console.log(greeting("team")); // Hello, team!
 console.log(greeting("Ada")); // Hello, Ada!
+console.log(greeting("")); // Hello, !
 ```
 
 Each call returns a new string and leaves nothing behind, so calling `greeting` twice with different names gives
 `"Hello, team!"` and then `"Hello, Ada!"`.
+
+The empty-name call is not a mistake in the example. `greeting("")` interpolates the empty string where the name would
+go and returns exactly `"Hello, !"` — the literal `"Hello, "`, then `"!"`, with nothing between the comma-space and the
+exclamation mark.
 
 ## Testing
 
@@ -50,6 +56,11 @@ node --test packages/product/test/greeting.test.mjs
 ## Error handling
 
 The module performs no validation; the test fails with an assertion diff if the greeting text changes.
+
+An empty name is therefore **accepted, not rejected**. `greeting("")` does not throw, does not return an error value
+and does not substitute a default name such as `"there"` or `"world"`; it returns the ordinary string `"Hello, !"` like
+any other call. Callers that need an empty name to be refused, or replaced by a fallback, must check the name
+themselves before calling `greeting`.
 
 ## Assumptions
 
