@@ -1,6 +1,6 @@
 # AGENTS.md — contributor contract for AI coding agents
 
-<!-- Generated contributor kit v1 (policy sha256:f41137c32fe0c6fa15d6e317d1e3cc7dfbf6bd3fb5a6e942014534af8473cd28). Refreshed only by governed upgrade commits; do not edit by hand. -->
+<!-- Generated contributor kit v2 (policy sha256:f41137c32fe0c6fa15d6e317d1e3cc7dfbf6bd3fb5a6e942014534af8473cd28). Refreshed only by governed upgrade commits; do not edit by hand. -->
 
 You are helping a teammate contribute to this product repository. Everything you need is in this repository and in the task brief the teammate gives you; nothing about the build station that integrates this product is available to you or needed.
 
@@ -11,7 +11,7 @@ You are helping a teammate contribute to this product repository. Everything you
 - Never claim a station-only check passed; say it will run on the station after submission.
 - If a dependency is missing or the host is unsupported, stop and report the script's `MISSING` or `UNSUPPORTED` line; do not work around it.
 - Never commit credentials, tokens, private keys or machine-specific absolute paths.
-- Do not edit the files this kit generates (this file, CONTRIBUTING.md, the issue forms, the pull request template, `scripts/contributor-check.sh`, `.github/contributor-kit.json`); they are refreshed by governed upgrade commits.
+- Do not edit the files this kit generates (this file, CONTRIBUTING.md, the issue forms, the pull request template, `scripts/contributor-check.sh`, `.github/contributor-kit.json` and its `.LEARNING.md` note); they are refreshed by governed upgrade commits.
 
 ## Setup
 

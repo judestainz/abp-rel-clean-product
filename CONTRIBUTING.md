@@ -1,6 +1,6 @@
 # Contributing
 
-<!-- Generated contributor kit v1 (policy sha256:f41137c32fe0c6fa15d6e317d1e3cc7dfbf6bd3fb5a6e942014534af8473cd28). Refreshed only by governed upgrade commits; do not edit by hand. -->
+<!-- Generated contributor kit v2 (policy sha256:f41137c32fe0c6fa15d6e317d1e3cc7dfbf6bd3fb5a6e942014534af8473cd28). Refreshed only by governed upgrade commits; do not edit by hand. -->
 
 This product is built with a review-and-integration station. You can ask it for work, or implement an approved brief yourself with your own tools and AI assistant.
 
